@@ -88,21 +88,26 @@ frequency, Fs of the dataset. That is, an epoch length of 1-second is taken sinc
 minimum stationary interval of EEG. 1-second epoch length offers a suitable number of samples for 
 epoch-based analysis for EEG sampled at 173.61 Hz. Furthermore, it gives adequate 
 decomposition depth for effective wavelet analysis. 
+
 **C. Feature Extraction:** 
 Feature extraction is the key step in improving the classification accuracy while reducing the space 
 dimension of the non-stationary EEG signals. We classify features in the following domains: 
+
 **1. Time domain features:** A total number of eleven features are extracted, which are further 
 categorized as: 
+
 **a. Statistical features:** The statistical features extracted for our study from the sequentially 
 segmented EEG signal are mean, median, mode, standard deviation, minimum, maximum, 
 skewness, and kurtosis. Statistical parameters such as mean, skewness, and kurtosis are 
 utilized to extract information on any changes within the distribution and amplitude of the 
 signal used. 
+
 **b. Non-linear features:** Non-linear features viz Hjorth parameter and Hurst exponent are 
 extracted. The Hjorth parameter determines the statistical property of the EEG signal using 
 three parameters - activity, mobility, and complexity. In this work, we have considered 
 mobility and complexity only. The Hurst component provides a measure to perform fractal 
 analysis of time series. 
+
 **2. Frequency domain features:** Due to the non-stationary nature and short-term characteristics 
 of the EEG signals, statistical and non-features alone are not sufficient for EEG analysis. Also, 
 frequency is considered as the intrinsic characteristic of the EEG signal and it can be of different 
@@ -123,6 +128,7 @@ most distinguished in the range 3-25 Hz. The maximum, minimum, mean, and standar
 deviation of wavelet coefficients are extracted for levels 3 and 4 as seizures are most prominent 
 in these two levels. Therefore, for each channel of the signal, a total number of 8 values are 
 extracted. 
+
 **D. Feature Selection:** 
 The process of feature selection is essential as it reduces the set of extracted features by selecting 
 the most prominent features only which further leads to efficient classification. In the present work, 
@@ -132,12 +138,14 @@ eliminating redundant dimensions. Reducing dimensionality can create classificat
 help prevent overfitting. In this work, the percentage of variance is kept being 95%. The features 
 with 95% of the variance are selected to reduce the risk of overfitting without removing useful 
 dimensions. 
+
 **E. Classification:** 
 In machine learning, classification is a supervised learning technique wherein the computer program 
 learns from the input data and then utilizes to classify new set of data. The classification process for 
 differentiating amongst seizure and non-seizure EEG signals is performed using different classifiers. 
 Based on the accuracy of classification learner we selected the Ensemble method which is also 
 known as RUS boosted Tree which gives 99.9 percentage of accuracy. 
+
 **F. Performance measurements:** 
 In our study, the performance of the proposed classifiers is assessed by calculating sensitivity, 
 specificity, and classification accuracy.
